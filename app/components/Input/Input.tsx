@@ -64,7 +64,7 @@ export default function Input() {
       <p className="mt-2">TIMER</p>
       <p className={`text-6xl font-bold font-mono ${success == true ? 'text-lime-500' : 'text-teal-200'}`}>{time.toFixed(2)}</p>
       {
-        success == true && (
+        success == false && (
           <>
           <div className="relative mt-20 h-40 w-full bg-orange-100 rounded-lg flex flex-col items-center justify-start sm:w-[40rem] sm:h-32 sm:justify-center">
             <p className="font-semibold mt-4 sm:text-2xl sm:mt-0">Congratulations!</p>
@@ -85,7 +85,7 @@ export default function Input() {
           {
             loop === true ? (
               <button 
-                className="absolute bottom-2 border-2 border-black p-2 bg-red-400 hover:bg-red-500"
+                className="relative mt-16 mb-4 border-2 border-black p-2 bg-red-400 hover:bg-red-500 sm:absolute sm:bottom-2"
                 onClick={() => setLoop(false)}
               >
                 Stop party poppers
@@ -94,7 +94,7 @@ export default function Input() {
             :
             (
               <button 
-                className="absolute bottom-2 border-2 border-black p-2 bg-green-400 hover:bg-green-500"
+                className="relative mt-16 mb-4 border-2 border-black p-2 bg-green-400 hover:bg-green-500 sm:absolute sm:bottom-2"
                 onClick={() => setLoop(true)}
               >
                 Start party poppers
