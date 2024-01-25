@@ -43,7 +43,7 @@ export default function Input() {
 
   return (
     <div className="flex flex-col items-center mt-16">
-      <label htmlFor="console-log-type" className="mb-2 font-semibold">Type 'console.log' as fast as you can</label>
+      <label htmlFor="console-log-type" className="mb-2 font-semibold">Type &apos;console.log&apos; as fast as you can</label>
       <div className={`flex relative left-9`}>
         <input 
           id="console-log-type"
@@ -68,7 +68,7 @@ export default function Input() {
           <>
           <div className="relative mt-20 h-32 w-[40rem] bg-orange-100 rounded-lg flex flex-col items-center justify-center">
             <p className="text-2xl font-semibold">Congratulations!</p>
-            <p>You typed 'console.log' in {time} seconds!</p>
+            <p>You typed &apos;console.log&apos; in {time} seconds!</p>
             <p>What an achievement!</p>
             <Lottie
               animationData={animationData}
