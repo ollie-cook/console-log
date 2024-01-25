@@ -64,7 +64,7 @@ export default function Input() {
       <p className="mt-2">TIMER</p>
       <p className={`text-6xl font-bold font-mono ${success == true ? 'text-lime-500' : 'text-teal-200'}`}>{time.toFixed(2)}</p>
       {
-        success == false && (
+        success == true && (
           <>
           <div className="relative mt-20 h-40 w-full bg-orange-100 rounded-lg flex flex-col items-center justify-start sm:w-[40rem] sm:h-32 sm:justify-center">
             <p className="font-semibold mt-4 sm:text-2xl sm:mt-0">Congratulations!</p>
