@@ -13,7 +13,7 @@ export default function Input() {
   const [loop, setLoop] = useState(true);
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "c") {
+    if (event.key.toLowerCase() === "c") {
       if (timer) {
         clearInterval(timer);
       }
@@ -22,10 +22,10 @@ export default function Input() {
       setTimer(newTimer);
     }
 
-    if (event.key === "g") {
+    if (event.key.toLowerCase() === "g") {
       if (timer) {
         clearInterval(timer);
-        if (inputValue === "console.lo") {
+        if (inputValue.toLowerCase() === "console.lo") {
           setSuccess(true);
         } else {
           setError("Wrong input");
@@ -44,17 +44,17 @@ export default function Input() {
   return (
     <div className="flex flex-col items-center mt-16">
       <label htmlFor="console-log-type" className="mb-2 font-semibold">Type &apos;console.log&apos; as fast as you can</label>
-      <div className={`flex relative left-9`}>
+      <div className={`flex relative sm:left-9`}>
         <input 
           id="console-log-type"
           type="text" 
-          className="border-4 border-black indent-1 h-16 w-96 text-4xl font-semibold" 
+          className="border-4 border-black indent-1 h-12 w-72 text-4xl font-semibold sm:w-96 sm:h-16" 
           onKeyDown={handleKeyDown}
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)}
         />
         <button 
-          className="w-16 ml-2 aspect-square bg-orange-400 border-4 border-black text-white font-bold hover:bg-orange-500"
+          className="w-12 ml-1 aspect-square bg-orange-400 border-4 border-black text-xs text-white font-bold hover:bg-orange-500 sm:w-16 sm:text-base sm:ml-2"
           onClick={handleStartOver}
         >
           Clear
@@ -64,21 +64,21 @@ export default function Input() {
       <p className="mt-2">TIMER</p>
       <p className={`text-6xl font-bold font-mono ${success == true ? 'text-lime-500' : 'text-teal-200'}`}>{time.toFixed(2)}</p>
       {
-        success == true && (
+        success == false && (
           <>
-          <div className="relative mt-20 h-32 w-[40rem] bg-orange-100 rounded-lg flex flex-col items-center justify-center">
-            <p className="text-2xl font-semibold">Congratulations!</p>
-            <p>You typed &apos;console.log&apos; in {time} seconds!</p>
-            <p>What an achievement!</p>
+          <div className="relative mt-20 h-40 w-full bg-orange-100 rounded-lg flex flex-col items-center justify-start sm:w-[40rem] sm:h-32 sm:justify-center">
+            <p className="font-semibold mt-4 sm:text-2xl sm:mt-0">Congratulations!</p>
+            <p className="text-sm sm:text-base">You typed &apos;console.log&apos; in {time} seconds!</p>
+            <p className="text-sm sm:text-base">What an achievement!</p>
             <Lottie
               animationData={animationData}
-              className="flex justify-center items-center h-32 absolute left-0"
+              className="flex justify-center items-center h-32 absolute left-0 bottom-0"
               loop={loop}
               style={{ transform: 'scaleX(-1)' }}
             />
             <Lottie
               animationData={animationData}
-              className="flex justify-center items-center h-32 absolute right-0"
+              className="flex justify-center items-center h-32 absolute right-0 bottom-0"
               loop={loop}
             />
           </div>
