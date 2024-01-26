@@ -39,6 +39,9 @@ export default function Input() {
     setInputValue("")
     setError(null)
     setSuccess(false)
+    if (timer) {
+      clearInterval(timer)
+    }
   }
 
   return (
