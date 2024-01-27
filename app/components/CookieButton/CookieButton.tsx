@@ -18,7 +18,7 @@ export default function CookieButton() {
 
   return (
     <div 
-      className="fixed bottom-4 right-2 flex flex-col items-end"
+      className="absolute bottom-4 right-2 flex flex-col items-end"
       onMouseEnter={() => setShowModal(true)}
         onMouseLeave={() => setShowModal(false)}
       >
