@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 
 export default function CookieButton() {
   const [showModal, setShowModal] = useState(false)
@@ -25,7 +26,7 @@ export default function CookieButton() {
       {
         showModal == true &&
         <div className="mb-2 bg-[#E9AD68] border-4 border-[#684636] rounded-lg p-2">
-          <p>Built by <a href="https://www.olliecookie.com" target="_blank" className="underline">Ollie Cook </a>&#8599;</p>
+          <p>Built by <a href="https://www.olliecookie.com" target="_blank" className="underline">Ollie Cook</a><FaArrowUpRightFromSquare className="inline-block mb-1 ml-1" /></p>
         </div>
       }
       <button 
